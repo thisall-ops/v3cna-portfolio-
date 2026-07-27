@@ -12,8 +12,8 @@ export function Certifications() {
 
   return (
     <Section id="certifications" eyebrow="03 / Credentials" title={<>Certifications <span className="text-gradient">& training</span></>}>
-      {/* In-progress professional certs */}
-      <h3 className="mb-5 font-mono text-sm uppercase tracking-widest text-white/45">// In progress</h3>
+      {/* Professional certifications & training */}
+      <h3 className="mb-5 font-mono text-sm uppercase tracking-widest text-white/45">// Certifications & training</h3>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {certifications.map((c, i) => (
           <motion.div
@@ -28,17 +28,21 @@ export function Certifications() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.16),transparent_60%)]" />
                 <div className="text-center">
                   <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-soft/30 font-mono text-cyan-soft">
-                    {'</>'}
+                    {c.status === 'Completed' ? '✓' : '</>'}
                   </div>
                   <span className="font-mono text-[10px] uppercase tracking-widest text-white/30">
-                    in progress
+                    {c.status.toLowerCase()}
                   </span>
                 </div>
               </div>
               <div className="flex flex-1 flex-col p-5">
                 <div className="mb-2 flex items-center justify-between gap-2">
                   <span className="tag text-white/45">{c.issuer}</span>
-                  <span className="tag rounded-full bg-amber-soft/15 px-2 py-0.5 text-amber-soft">
+                  <span
+                    className={`tag rounded-full px-2 py-0.5 ${
+                      c.status === 'Completed' ? 'bg-emerald-400/15 text-emerald-300' : 'bg-amber-soft/15 text-amber-soft'
+                    }`}
+                  >
                     {c.status}
                   </span>
                 </div>
