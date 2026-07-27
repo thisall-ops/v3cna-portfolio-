@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Section } from '../components/Section'
 import { SpotlightCard } from '../components/SpotlightCard'
 import { ImageGallery } from '../components/ImageGallery'
+import { Lightbox } from '../components/Lightbox'
 import { certifications, credentials } from '../data/content'
 
 export function Certifications() {
@@ -9,6 +11,11 @@ export function Certifications() {
     src: c.image!,
     caption: c.caption ?? c.title,
   }))
+
+  const certImages = certifications
+    .filter((c) => c.image)
+    .map((c) => ({ src: c.image!, caption: c.caption ?? c.title }))
+  const [activeCert, setActiveCert] = useState<number | null>(null)
 
   return (
     <Section id="certifications" eyebrow="03 / Credentials" title={<>Certifications <span className="text-gradient">& training</span></>}>
@@ -24,17 +31,36 @@ export function Certifications() {
             transition={{ duration: 0.5, delay: i * 0.07 }}
           >
             <SpotlightCard className="flex h-full flex-col overflow-hidden" tilt={3}>
-              <div className="relative flex aspect-[4/3] items-center justify-center border-b border-white/8 bg-midnight-700/60">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.16),transparent_60%)]" />
-                <div className="text-center">
-                  <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-soft/30 font-mono text-cyan-soft">
-                    {c.status === 'Completed' ? '✓' : '</>'}
-                  </div>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-white/30">
-                    {c.status.toLowerCase()}
+              {c.image ? (
+                <button
+                  type="button"
+                  data-cursor
+                  onClick={() => setActiveCert(certImages.findIndex((it) => it.src === c.image))}
+                  className="group relative block aspect-[4/3] w-full overflow-hidden border-b border-white/8 bg-midnight-700/60"
+                >
+                  <img
+                    src={c.image}
+                    alt={c.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                  />
+                  <span className="pointer-events-none absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-md glass text-xs text-white/70 opacity-0 transition-opacity group-hover:opacity-100">
+                    ⤢
                   </span>
+                </button>
+              ) : (
+                <div className="relative flex aspect-[4/3] items-center justify-center border-b border-white/8 bg-midnight-700/60">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(99,102,241,0.16),transparent_60%)]" />
+                  <div className="text-center">
+                    <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-soft/30 font-mono text-cyan-soft">
+                      {'</>'}
+                    </div>
+                    <span className="font-mono text-[10px] uppercase tracking-widest text-white/30">
+                      {c.status.toLowerCase()}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
               <div className="flex flex-1 flex-col p-5">
                 <div className="mb-2 flex items-center justify-between gap-2">
                   <span className="tag text-white/45">{c.issuer}</span>
@@ -63,6 +89,13 @@ export function Certifications() {
           </motion.div>
         ))}
       </div>
+
+      <Lightbox
+        items={certImages}
+        index={activeCert}
+        onClose={() => setActiveCert(null)}
+        onNavigate={setActiveCert}
+      />
 
       {/* Earned credentials gallery */}
       <h3 className="mb-2 mt-14 font-mono text-sm uppercase tracking-widest text-white/45">// Diploma & competition certificates</h3>

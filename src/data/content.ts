@@ -220,7 +220,16 @@ export type Cert = {
 
 // Professional certifications (in progress + completed, no gallery image).
 export const certifications: Cert[] = [
-  { id: 'ad-rts', title: 'Certified AD Red Team Specialist (AD-RTS)', issuer: 'CyberWarfare Labs', date: '2026', status: 'Completed', verify: '#' },
+  {
+    id: 'ad-rts',
+    title: 'Certified AD Red Team Specialist (AD-RTS)',
+    issuer: 'CyberWarfare Labs',
+    date: '2026',
+    status: 'Completed',
+    image: './media/certs/ad-rts.jpg',
+    caption: 'AD-RTS — Certified AD Red Team Specialist. Credential ID: ADRTS-6a6761378aed14e94c9074d8.',
+    verify: '#',
+  },
   { id: 'crta', title: 'Certified Red Team Analyst (CRTA)', issuer: 'CyberWarFare Labs', date: '2025', status: 'In Progress', verify: '#' },
   { id: 'ceh', title: 'Certified Ethical Hacker (CEH)', issuer: 'Coursera / Pearson', date: '2025', status: 'In Progress', verify: '#' },
 ]
