@@ -227,6 +227,16 @@ export const certifications: Cert[] = [
 // Earned credentials with certificate images (diploma + competition certs).
 export const credentials: Cert[] = [
   {
+    id: 'ad-rts',
+    title: 'Certified AD Red Team Specialist (AD-RTS)',
+    issuer: 'CyberWarfare Labs',
+    date: '2026',
+    status: 'Completed',
+    image: './media/certs/ad-rts.jpg',
+    caption: 'AD-RTS — Certified AD Red Team Specialist. Credential ID: ADRTS-6a6761378aed14e94c9074d8.',
+    verify: '#',
+  },
+  {
     id: 'idm-diploma',
     title: 'Higher National Diploma — Cyber Security',
     issuer: 'IDM / CICRA Campus',
