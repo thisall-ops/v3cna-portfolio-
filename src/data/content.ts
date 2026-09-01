@@ -227,6 +227,7 @@ export const ctfBuilder = {
   },
   liveNote:
     'Several of these challenges are still live in active HackKAP rotations, so I can only show the full authored set — not each challenge individually.',
+  link: { label: 'Visit HackKAP', href: 'https://hackkap.com/about' },
 }
 
 // ---------------------------------------------------------------------------

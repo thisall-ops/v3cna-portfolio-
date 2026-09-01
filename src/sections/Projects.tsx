@@ -45,6 +45,16 @@ export function Projects() {
                 <span aria-hidden>⚠</span>
                 <span>{ctfBuilder.liveNote}</span>
               </div>
+              {ctfBuilder.link && (
+                <a
+                  href={ctfBuilder.link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex items-center gap-1.5 rounded-lg border border-white/12 px-3.5 py-2 text-sm text-white/80 transition-colors hover:border-cyan-soft/40 hover:text-white"
+                >
+                  {ctfBuilder.link.label} &#8599;
+                </a>
+              )}
             </div>
             <ImageGallery
               items={[ctfBuilder.listImage]}
