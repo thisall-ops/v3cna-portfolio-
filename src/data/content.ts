@@ -4,9 +4,9 @@ export const profile = {
   shellUser: 'thisal',
   shellHost: 'arch',
   roles: [
-    'Cyber Security Undergraduate',
-    'CTF Competitor',
-    'Challenge Builder',
+    'Cyber Security Graduand',
+    'Penetration Tester',
+    'CTF Challenge Author',
     'Security Researcher',
   ],
   location: 'Malabe, Colombo, Sri Lanka',
@@ -16,13 +16,12 @@ export const profile = {
 }
 
 export const roleLines = [
-  'Cyber Security Undergraduate',
-  'CTF Competitor',
-  'HackKAP Challenge Builder',
-  'Ph4ntom Club Secretary',
-  'Student Interactive Society Vice Secretary',
+  'Cyber Security Graduand (B.Sc. Hons)',
+  'Penetration Testing · Web / Mobile / API',
+  'HackKAP Challenge Author',
+  'CTF Team Leader — Cronoz / Flag Hunters',
   'Security Researcher',
-  'Linux User',
+  'Arch Linux · 4+ years',
 ]
 
 export type SocialLink = {
@@ -32,13 +31,10 @@ export type SocialLink = {
   icon: string
 }
 
-// Update remaining placeholder hrefs later.
 export const socials: SocialLink[] = [
   { key: 'linkedin', label: 'linkedin', href: 'https://linkedin.com/in/thisal-ariyaratne-74027b235', icon: 'in' },
   { key: 'github', label: 'github', href: 'https://github.com/thisall-ops', icon: 'gh' },
-  { key: 'hackthebox', label: 'hackthebox', href: 'https://app.hackthebox.com/profile', icon: 'htb' },
   { key: 'email', label: 'email', href: 'mailto:thisal687@gmail.com', icon: '@' },
-  { key: 'instagram', label: 'instagram', href: 'https://www.instagram.com/thisa.al__?igsh=ZjY1bmR0MTljcGMz', icon: 'ig' },
   { key: 'whatsapp', label: 'whatsapp', href: 'https://wa.me/qr/4N3ZEJIFO27UN1', icon: 'wa' },
   { key: 'cv.pdf', label: 'cv.pdf', href: './Thisal_Ariyaratne_CV.pdf', icon: 'pdf' },
 ]
@@ -49,27 +45,27 @@ export const whatsapp = {
 }
 
 export const about = {
-  lead: 'Cyber security undergraduate operating at the seam between offensive tradecraft and defensive operations.',
+  lead: 'Cyber security graduand who breaks systems in competitive CTFs, then builds the tooling to detect the same attacks.',
   paragraphs: [
-    'Thisal Ariyaratne breaks systems in competitive CTFs, then turns around and analyzes the logs, traffic, and artifacts to understand exactly how they were attacked. That dual perspective — attacker intuition paired with analyst discipline — anchors a focus on offensive security, digital forensics, Linux internals, and applied security research.',
-    'He authors national-level CTF challenges for HackKAP Sri Lanka, leads a competitive CTF team, and has earned multiple top-three finishes across national and inter-university competitions. His work centers on practical problem solving: reverse engineering, threat analysis, system investigation, and building security-focused tooling.',
-    'Backed by four years of daily Linux use, he designs custom terminal workflows, experiments across distros, and is currently architecting AP3X — a Rust-based AI security agent exploring how AI can sharpen real cyber security operations.',
+    'Thisal Ariyaratne works at the seam between offensive tradecraft and applied security engineering. He hunts flags in national CTFs, assesses web, mobile, and API authentication flows, and turns findings into structured reports — attacker intuition paired with the discipline to document, remediate, and defend.',
+    'He authors national-level CTF challenges for HackKAP Sri Lanka across web exploitation, cryptography, binary exploitation, reverse engineering, forensics, OSINT, and steganography, leads competitive teams to top-three finishes, and has just completed a B.Sc. (Hons) in Cyber Security (results pending, Oct 2026).',
+    'His research project, BankShield-LK, is a static-analysis and machine-learning system that detects malicious Android banking APKs at 97.9% accuracy — a full pipeline from raw APK to an explained, backend-owned verdict. Alongside it he is building AP3X, a Rust AI security agent, backed by four years of daily Linux.',
   ],
   facts: [
-    { label: 'Focus', value: 'Offensive Sec · Forensics · Research' },
+    { label: 'Focus', value: 'Offensive Sec · AppSec · Research' },
+    { label: 'Status', value: 'B.Sc. (Hons) Graduand · CEH candidate' },
+    { label: 'Building', value: 'BankShield-LK · AP3X (Rust)' },
     { label: 'Daily Driver', value: 'Arch Linux · 4+ years' },
-    { label: 'Building', value: 'AP3X — Rust AI security agent' },
-    { label: 'Languages', value: 'Sinhala · English' },
   ],
 }
 
 export const skillGroups = [
-  { title: 'Monitoring & Analysis', items: ['Wireshark', 'Tshark', 'Nmap', 'RustScan', 'PCAP analysis', 'Log analysis', 'Network monitoring'] },
-  { title: 'Incident Investigation', items: ['Threat identification', 'Digital forensics', 'Evidence-chain documentation', 'CTF methodology'] },
-  { title: 'Security Tools', items: ['Burp Suite', 'Metasploit', 'Gobuster', 'Hashcat', 'Hydra'] },
-  { title: 'Networking & Protocols', items: ['TCP/IP', 'DNS', 'HTTP/HTTPS', 'OAuth 2.0', 'SAML 2.0', 'JWT'] },
-  { title: 'Systems', items: ['Kali', 'Arch', 'Ubuntu', 'CachyOS', 'Windows'] },
-  { title: 'Programming', items: ['Python', 'Bash', 'C', 'C++', 'C#', 'Rust'] },
+  { title: 'Offensive & AppSec', items: ['Penetration testing', 'Vulnerability assessment', 'Web app security', 'Mobile / APK security', 'API security', 'OWASP Top 10', 'Static analysis'] },
+  { title: 'Security Tooling', items: ['Burp Suite', 'Metasploit', 'Nmap', 'RustScan', 'Gobuster', 'Hashcat', 'Hydra', 'Androguard'] },
+  { title: 'Detection & Forensics', items: ['Wireshark', 'Tshark', 'Wazuh SIEM', 'PCAP analysis', 'Log analysis', 'Digital forensics', 'MITRE ATT&CK'] },
+  { title: 'Protocols & Auth', items: ['TCP/IP', 'DNS', 'HTTP/HTTPS', 'OAuth 2.0', 'SAML 2.0', 'JWT', 'VPN'] },
+  { title: 'Programming', items: ['Python', 'Bash', 'Rust', 'C', 'C++', 'C#'] },
+  { title: 'Systems & Platforms', items: ['Kali', 'Arch', 'Ubuntu', 'Windows', 'Hack The Box', 'TryHackMe'] },
 ]
 
 export type GalleryImage = {
@@ -85,6 +81,8 @@ export type Project = {
   stack: string[]
   details: string[]
   status?: string
+  featured?: boolean
+  metrics?: { label: string; value: string }[]
   github?: string
   caseStudy?: string
   /** real screenshots with captions */
@@ -98,6 +96,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 'bankshield',
+    title: 'BankShield-LK',
+    tag: 'Mobile / ML Security',
+    status: 'Active',
+    featured: true,
+    summary:
+      'A static-analysis and machine-learning system that detects malicious Android banking APKs at 97.9% accuracy — the full pipeline from a raw APK to an explained, backend-owned verdict.',
+    stack: ['Python', 'XGBoost', 'Androguard', 'FastAPI', 'React', 'TypeScript', 'Drebin-215'],
+    metrics: [
+      { label: 'Accuracy', value: '97.9%' },
+      { label: 'ROC-AUC', value: '0.996' },
+      { label: 'Static features', value: '215' },
+      { label: 'Automated tests', value: '222' },
+    ],
+    details: [
+      'Trained and tuned XGBoost and Random Forest models on 7,258 de-duplicated Drebin-215 feature vectors — reaching 97.9% accuracy and 0.996 ROC-AUC with verified zero cross-split leakage.',
+      'Engineered an Androguard-based static extractor that maps 215 indicators (permissions, API calls, intents) across 8 naming schemas and scores unseen APKs without ever executing them.',
+      'Wrapped the scanner in an asynchronous FastAPI backend (33 tests) and added a prompt-injection-hardened LLM explanation layer where the backend authoritatively owns every verdict — the model can explain, never decide.',
+      'Shipped end-to-end with a React + TypeScript UI; 222 automated tests across the full stack.',
+    ],
+    github: 'https://github.com/thisall-ops/BankShield-LK',
+    images: [
+      { src: './media/bankshield/01-landing.png', caption: 'Landing — upload an APK for static analysis.' },
+      { src: './media/bankshield/03-result.png', caption: 'Model classification with confidence and cross-model agreement.' },
+      { src: './media/bankshield/04-ai-analysis.png', caption: 'AI security analysis — evidence explained; the verdict is owned by the backend.' },
+      { src: './media/bankshield/02-progress.png', caption: 'Asynchronous scan progress while the APK is parsed.' },
+      { src: './media/bankshield/05-error-handling.png', caption: 'Structured handling of corrupt / invalid APKs.' },
+    ],
+    note: 'Undergraduate research prototype — trained on the public Drebin-215 benchmark, not a certified product. Metrics characterise benchmark performance.',
+  },
+  {
+    id: 'fortress',
+    title: 'Fortress Cloud Security Assessment',
+    tag: 'IAM / AuthN Review',
+    summary: 'Static security assessment of an authentication service covering OAuth 2.0, SAML 2.0, and JWT flows.',
+    stack: ['OAuth 2.0', 'SAML 2.0', 'JWT', 'Threat Modeling', 'Reporting'],
+    details: [
+      'Identified critical protocol weaknesses and mapped realistic exploit chains across the authentication surface.',
+      'Documented findings, business impact, and prioritized remediation in a structured security report.',
+      'Applied the same investigative and reporting discipline used in real-world VAPT engagements.',
+    ],
+    caseStudy: './docs/fortress-iam-assessment.pdf',
+  },
+  {
     id: 'ap3x',
     title: 'AP3X',
     tag: 'AI Security Tooling',
@@ -109,7 +151,6 @@ export const projects: Project[] = [
       'Integrates multiple LLM providers (OpenAI, Claude) with secure API-key handling.',
       'Built to accelerate Linux operations, scripting, and day-to-day security research from a single command line.',
     ],
-    github: '#',
     images: [
       { src: './media/ap3x/tui.png', caption: 'AP3X interactive terminal UI (TUI) at startup.' },
       { src: './media/ap3x/scan-directory.png', caption: 'Tasking AP3X to scan and summarise the contents of a directory.' },
@@ -131,21 +172,7 @@ export const projects: Project[] = [
       'Automated alert triage, MITRE ATT&CK mapping, and threat hunting across a simulated attack environment.',
       'Bridges the AP3X agent with SIEM tooling to support analyst-grade investigation.',
     ],
-    github: '#',
     gallery: 4,
-  },
-  {
-    id: 'fortress',
-    title: 'Fortress Cloud Security Assessment',
-    tag: 'IAM / AuthN Review',
-    summary: 'Static security assessment of an authentication service covering OAuth 2.0, SAML 2.0, and JWT flows.',
-    stack: ['OAuth 2.0', 'SAML 2.0', 'JWT', 'Threat Modeling', 'Reporting'],
-    details: [
-      'Identified critical protocol weaknesses and mapped realistic exploit chains.',
-      'Documented findings, business impact, and prioritized remediation in a structured security report.',
-      'Applied the same investigative and reporting discipline used in real-world security operations.',
-    ],
-    caseStudy: './docs/fortress-iam-assessment.pdf',
   },
   {
     id: 'archive-avalanche',
@@ -154,7 +181,7 @@ export const projects: Project[] = [
     summary: 'A five-layer forensics challenge using 50,000 nested ZIP files to force scripted, automated extraction.',
     stack: ['Forensics', 'Python', 'Automation', 'Challenge Design'],
     details: [
-      'Engineered for HackKAP CTF as an original forensics challenge.',
+      'Engineered for HackKAP CTF as an original national-level forensics challenge.',
       'Five nested layers of 50,000 ZIP files defeat manual extraction and reward scripting.',
     ],
     note: 'This challenge is still live in HackKAP rotations, so the solution and internals are kept private.',
@@ -190,11 +217,9 @@ export const projects: Project[] = [
 // CTF Challenge Building (HackKAP)
 // ---------------------------------------------------------------------------
 export const ctfBuilder = {
-  heading: 'CTF Challenge Builder — HackKAP Sri Lanka',
+  heading: 'CTF Challenge Author — HackKAP Sri Lanka',
   blurb:
     'As a challenge builder and crew member for HackKAP, I have authored 20+ original challenges for national-level competitions across Web Exploitation, Cryptography, Binary Exploitation, Reverse Engineering, Forensics, OSINT, and Steganography.',
-  // Master list of authored challenges. Individual challenge internals stay
-  // private because many are still in active rotation.
   listImage: {
     src: './media/ctf/hackkap-challenge-list.png',
     caption:
@@ -205,7 +230,7 @@ export const ctfBuilder = {
 }
 
 // ---------------------------------------------------------------------------
-// Certifications & competition credentials
+// Certifications & credentials
 // ---------------------------------------------------------------------------
 export type Cert = {
   id: string
@@ -218,7 +243,38 @@ export type Cert = {
   verify?: string
 }
 
-// Professional certifications (in progress + completed, no gallery image).
+// Academic qualifications — the CICRA pathway (with certificate images).
+export const academicQuals: Cert[] = [
+  {
+    id: 'adv-diploma',
+    title: 'Advanced Diploma in Cyber Security',
+    issuer: 'CICRA Campus',
+    date: 'Mar 2026',
+    status: 'Completed',
+    image: './media/certs/advanced-diploma-cyber-security.png',
+    caption: 'Advanced Diploma in Cyber Security — CICRA Campus. Ref: ADCS-2026-04-09.',
+  },
+  {
+    id: 'diploma',
+    title: 'Diploma in Cyber Security',
+    issuer: 'CICRA Campus',
+    date: 'Aug 2025',
+    status: 'Completed',
+    image: './media/certs/diploma-cyber-security.png',
+    caption: 'Diploma in Cyber Security — CICRA Campus. Ref: DCS-2025-10-81.',
+  },
+  {
+    id: 'foundation',
+    title: 'Foundation in Cyber Security',
+    issuer: 'CICRA Campus',
+    date: 'Nov 2024',
+    status: 'Completed',
+    image: './media/certs/foundation-cyber-security.png',
+    caption: 'Foundation in Cyber Security — CICRA Campus. Ref: FND-2025-07-40.',
+  },
+]
+
+// Professional certifications & training.
 export const certifications: Cert[] = [
   {
     id: 'ad-rts',
@@ -227,27 +283,18 @@ export const certifications: Cert[] = [
     date: '2026',
     status: 'Completed',
     image: './media/certs/ad-rts.jpg',
-    caption: 'AD-RTS — Certified AD Red Team Specialist. Credential ID: ADRTS-6a6761378aed14e94c9074d8.',
+    caption: 'AD-RTS — Certified AD Red Team Specialist. Credential ID: 6a6761378aed14e94c9074d8.',
     verify: '#',
   },
-  { id: 'crta', title: 'Certified Red Team Analyst (CRTA)', issuer: 'CyberWarFare Labs', date: '2025', status: 'In Progress', verify: '#' },
-  { id: 'ceh', title: 'Certified Ethical Hacker (CEH)', issuer: 'Coursera / Pearson', date: '2025', status: 'In Progress', verify: '#' },
+  { id: 'ceh', title: 'Certified Ethical Hacker (CEH)', issuer: 'EC-Council (via CICRA Campus)', date: '2026', status: 'In Progress', verify: '#' },
+  { id: 'crta', title: 'Certified Red Team Analyst (CRTA)', issuer: 'CyberWarfare Labs', date: '2025', status: 'In Progress', verify: '#' },
 ]
 
-// Earned credentials with certificate images (diploma + competition certs).
+// Earned competition credentials with certificate images.
 export const credentials: Cert[] = [
   {
-    id: 'idm-diploma',
-    title: 'Higher National Diploma — Cyber Security',
-    issuer: 'IDM / CICRA Campus',
-    date: '2024 – 2026',
-    status: 'Completed',
-    image: './media/certs/idm-diploma.jpg',
-    caption: 'Higher National Diploma in Cyber Security.',
-  },
-  {
     id: 'hackkap-cert',
-    title: 'Challenge Builder & Crew — HackKAP',
+    title: 'Challenge Author & Crew — HackKAP',
     issuer: 'HackKAP Sri Lanka',
     date: '2024',
     status: 'Completed',
@@ -317,6 +364,11 @@ export const credentials: Cert[] = [
     image: './media/certs/medusa-finalist.jpeg',
     caption: 'Finalist with team CHRONOS at MEDUSA CTF 2025.',
   },
+]
+
+export const education = [
+  { title: 'B.Sc. (Hons) Cyber Security (Top-Up)', org: 'Wrexham University, UK · pathway with CICRA Campus', date: 'Completed · Results Pending (Oct 2026)' },
+  { title: 'Higher National Diploma in Cyber Security', org: 'CICRA Campus · affil. Deakin University', date: '2024 – 2026' },
 ]
 
 // ---------------------------------------------------------------------------
@@ -397,10 +449,4 @@ export const achievements: Achievement[] = [
     ],
   },
   { date: '2025', title: 'CHRONOS', event: 'MEDUSA CTF', rank: 'Finalist' },
-]
-
-export const education = [
-  { title: 'B.Sc. (Hons) Cyber Security (Top-Up)', org: 'Wrexham University, UK · pathway with CICRA Campus', date: 'Expected Oct 2026' },
-  { title: 'Higher National Diploma in Cyber Security', org: 'CICRA Campus · affil. Deakin University', date: '2024 – 2026' },
-  { title: 'Foundation in Cyber Security', org: 'CICRA Campus', date: '2024' },
 ]

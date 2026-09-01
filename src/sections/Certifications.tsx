@@ -4,7 +4,7 @@ import { Section } from '../components/Section'
 import { SpotlightCard } from '../components/SpotlightCard'
 import { ImageGallery } from '../components/ImageGallery'
 import { Lightbox } from '../components/Lightbox'
-import { certifications, credentials } from '../data/content'
+import { academicQuals, certifications, credentials } from '../data/content'
 
 export function Certifications() {
   const credentialItems = credentials.map((c) => ({
@@ -15,12 +15,27 @@ export function Certifications() {
   const certImages = certifications
     .filter((c) => c.image)
     .map((c) => ({ src: c.image!, caption: c.caption ?? c.title }))
+  const academicItems = academicQuals
+    .filter((c) => c.image)
+    .map((c) => ({ src: c.image!, caption: c.caption ?? c.title }))
   const [activeCert, setActiveCert] = useState<number | null>(null)
 
   return (
     <Section id="certifications" eyebrow="03 / Credentials" title={<>Certifications <span className="text-gradient">& training</span></>}>
+      {/* Academic qualifications — CICRA pathway */}
+      <h3 className="mb-2 font-mono text-sm uppercase tracking-widest text-white/45">// Academic qualifications</h3>
+      <p className="mb-5 max-w-2xl text-sm text-white/55">
+        The CICRA Campus pathway — Foundation to Advanced Diploma. Tap any certificate to view it full-size.
+      </p>
+      <ImageGallery
+        items={academicItems}
+        cols="grid-cols-1 sm:grid-cols-3"
+        aspect="aspect-[3/4]"
+        fit="contain"
+      />
+
       {/* Professional certifications & training */}
-      <h3 className="mb-5 font-mono text-sm uppercase tracking-widest text-white/45">// Certifications & training</h3>
+      <h3 className="mb-5 mt-14 font-mono text-sm uppercase tracking-widest text-white/45">// Professional certifications & training</h3>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {certifications.map((c, i) => (
           <motion.div
@@ -75,14 +90,16 @@ export function Certifications() {
                 <h3 className="font-semibold leading-snug text-white">{c.title}</h3>
                 <div className="mt-auto flex items-center justify-between pt-4">
                   <span className="tag text-white/40">{c.date}</span>
-                  <a
-                    href={c.verify}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm text-cyan-soft/90 underline-offset-4 transition-colors hover:text-cyan-soft hover:underline"
-                  >
-                    Verify &#8599;
-                  </a>
+                  {c.verify && c.verify !== '#' && (
+                    <a
+                      href={c.verify}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sm text-cyan-soft/90 underline-offset-4 transition-colors hover:text-cyan-soft hover:underline"
+                    >
+                      Verify &#8599;
+                    </a>
+                  )}
                 </div>
               </div>
             </SpotlightCard>
@@ -98,7 +115,7 @@ export function Certifications() {
       />
 
       {/* Earned credentials gallery */}
-      <h3 className="mb-2 mt-14 font-mono text-sm uppercase tracking-widest text-white/45">// Diploma & competition certificates</h3>
+      <h3 className="mb-2 mt-14 font-mono text-sm uppercase tracking-widest text-white/45">// Competition certificates</h3>
       <p className="mb-5 max-w-2xl text-sm text-white/55">
         Tap any certificate to view it full-size.
       </p>

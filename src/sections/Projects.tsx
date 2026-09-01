@@ -16,8 +16,9 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.55, delay: (i % 2) * 0.08 }}
+            className={p.featured ? 'md:col-span-2' : ''}
           >
-            <ProjectCard project={p} />
+            <ProjectCard project={p} defaultOpen={p.featured} />
           </motion.div>
         ))}
       </div>
@@ -58,15 +59,23 @@ export function Projects() {
   )
 }
 
-function ProjectCard({ project }: { project: Project }) {
-  const [open, setOpen] = useState(false)
+function ProjectCard({ project, defaultOpen = false }: { project: Project; defaultOpen?: boolean }) {
+  const [open, setOpen] = useState(defaultOpen)
 
   return (
-    <SpotlightCard className="flex h-full flex-col p-6" tilt={3}>
+    <SpotlightCard
+      className={`flex h-full flex-col p-6 ${project.featured ? 'md:p-8 ring-1 ring-cyan-soft/20' : ''}`}
+      tilt={project.featured ? 2 : 3}
+    >
       <div className="flex items-start justify-between gap-3">
         <div>
-          <span className="tag uppercase text-cyan-soft/70">{project.tag}</span>
-          <h3 className="mt-1.5 text-xl font-bold text-white">{project.title}</h3>
+          <span className="tag uppercase text-cyan-soft/70">
+            {project.featured && <span className="mr-1.5 text-amber-soft">★ Featured</span>}
+            {project.tag}
+          </span>
+          <h3 className={`mt-1.5 font-bold text-white ${project.featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
+            {project.title}
+          </h3>
         </div>
         {project.status && (
           <span
@@ -81,7 +90,20 @@ function ProjectCard({ project }: { project: Project }) {
         )}
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-white/65">{project.summary}</p>
+      <p className={`mt-3 leading-relaxed text-white/70 ${project.featured ? 'text-base md:text-lg md:max-w-3xl' : 'text-sm text-white/65'}`}>
+        {project.summary}
+      </p>
+
+      {project.metrics && project.metrics.length > 0 && (
+        <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-4">
+          {project.metrics.map((m) => (
+            <div key={m.label} className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5 text-center">
+              <div className="text-gradient text-xl font-extrabold md:text-2xl">{m.value}</div>
+              <div className="tag mt-0.5 uppercase text-white/45">{m.label}</div>
+            </div>
+          ))}
+        </div>
+      )}
 
       <div className="mt-4 flex flex-wrap gap-1.5">
         {project.stack.map((s) => (

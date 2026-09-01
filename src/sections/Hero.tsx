@@ -18,7 +18,7 @@ export function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-soft opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-soft" />
           </span>
-          <span className="tag text-white/60">AVAILABLE FOR SOC / SECURITY INTERNSHIPS</span>
+          <span className="tag text-white/60">OPEN TO SECURITY INTERNSHIPS · VAPT / APPSEC</span>
         </div>
 
         <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
